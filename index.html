@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Scheduler</h1>
+        <form id="taskForm">
+            <div class="form-group">
+                <label for="name">Task Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="priority">Priority:</label>
+                <input type="number" id="priority" name="priority" required>
+            </div>
+            
+            <!-- Replace skillset with description -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="estimatedTime">Estimated Time (in seconds):</label>
+                <input type="number" id="estimatedTime" name="estimatedTime" required>
+            </div>
+            
+            <!-- Submit button to navigate to output.html -->
+            <button type="button" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            // Check if all required fields are filled
+            if (document.getElementById("name").checkValidity() &&
+                document.getElementById("priority").checkValidity() &&
+                document.getElementById("description").checkValidity() &&
+                document.getElementById("estimatedTime").checkValidity()) {
+                // Redirect to the output.html page
+                <a href="output.html">Visit Example Website</a>
+            } else {
+                // Display an alert if any required field is empty
+                alert("Please fill in all required fields.");
+            }
+        });
+    </script>
+</body>
+</html>
